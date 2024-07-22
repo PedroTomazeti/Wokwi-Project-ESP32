@@ -1,65 +1,17 @@
 # Wokwi-Project-ESP32
-Assim que você baixar o repositório, abra ele com o IntelliJ (ou a Java IDE de sua preferência) baixe todas as dependências necessárias e compile.
+Projeto de Simulação de Sensor DHT22 com MQTT
+Este projeto foi desenvolvido como parte da disciplina de Instrumentação Eletrônica da Universidade Estadual do Maranhão (UEMA). Ele utiliza a plataforma de simulação Wokwi e se comunica via WebSocket MQTT.
 
-Em seguida, procure um arquivo chamado "application.example.properties". Ele está exatamente no caminho: src -> main -> resources. Este arquivo é importante para a execução pois contém todas as configurações necessárias para se comunicar com o banco de dados.
+Descrição do Projeto
+O objetivo deste projeto é medir a temperatura e umidade utilizando um sensor DHT22, e publicar essas medições em um broker MQTT. A comunicação é realizada através de uma conexão Wi-Fi simulada na plataforma Wokwi.
 
-Para começar a configuração, copie ele para outro arquivo chamado apenas "application.properties" no mesmo local, e preencha as chaves:
-
-```
-...
-spring.datasource.url=[...]
-spring.datasource.username=
-spring.datasource.password=
-...
-```
-
-Perceba que o campo URL já tem dados inseridos - é apenas para facilitar o preenchimento caso esteja usando o JDBC: neste caso, faça o seguinte:
-
-```
-jdbc:DATABASE_MANAGER://localhost:DATABASE_PORT/DATABASE_OR_SCHEMA_NAME
-```
-
-1. DATABASE_MANAGER: você irá trocar pelo respectivo gerenciador instalado localmente (mysql, mariadb, postgres, etc...);
-
-2. DATABASE_PORT: você irá substituir pela porta padrão da sua conexão com o banco de dados;
-
-3. DATABASE_OR_SCHEMA_NAME: é basicamente o nome da database (caso esteja usando MariaDB), ou schema (caso esteja usando MySQL pelo Workbench);
-
-4. não salve ainda, vamos configurar agora o username e o password
-
-
-
-Voltando a atenção agora ao banco de dados: é importante que você crie, ou já tenha criado uma database/schema para ser usada na aplicação, e um usuário que tenha as permissões necessárias para usar.
-
-Se o database/schema já tiver sido criado, se preocupe apenas em definir um usuário com senha, e com permissões para usar essa base da dados.
-
-Se você ainda for criar o database/schema da nossa aplicação, use o mesmo nome de DATABASE_OR_SCHEMA; e na janela de configuração, ponha um usuário que já exista e que tenha acesso livre a esse database.
-
-Por fim, falta apenas criar a tabela a ser usada pela aplicação. Apenas execute a seguinte query dentro da nossa database:
-
-```sql
-create table admin(
-    id int not null auto_increment,
-    email varchar(45) not null,
-    senha varchar(45) not null,
-    usuario varchar(45) not null,
-    primary key(id)
-);
-
-create table noticia(
-    id int not null auto_increment,
-    titulo varchar(120) not null,
-    lide varchar(90) not null,
-    corpo text not null,
-    data varchar(10) not null,
-    primary key(id)
-);
-```
-
-E feito!
-
-Dê run na aplicação, e visualize o seu funcionamento na seguinte URL:
-
-```
-http://localhost:9000/
-```
+Componentes Utilizados
+Sensor DHT22: Sensor de temperatura e umidade.
+MQTT Broker: Utilizado para comunicação MQTT. O broker utilizado neste projeto é o broker.mqttdashboard.com.
+Wi-Fi: Conexão simulada com a rede Wokwi-GUEST.
+Configurações do MQTT
+MQTT_CLIENT_ID: "pedro-tomazeti-micropy"
+MQTT_BROKER: "broker.mqttdashboard.com"
+MQTT_USER: ""
+MQTT_PASSWORD: ""
+MQTT_TOPIC: "instrum-eletro"

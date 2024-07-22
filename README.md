@@ -25,8 +25,9 @@ Inicialização do Sensor DHT22: O sensor é inicializado no pino 18.
 Conexão Wi-Fi: O dispositivo se conecta à rede Wi-Fi simulada Wokwi-GUEST.
 Conexão ao Broker MQTT: Uma conexão é estabelecida com o broker MQTT broker.mqttdashboard.com.
 Medição e Publicação: O código mede a temperatura e a umidade utilizando o sensor DHT22, e publica essas medições no tópico MQTT instrum-eletro a cada segundo, caso haja uma nova medição.
+```
 Plataforma de Simulação
 Este código é projetado para ser executado na plataforma de simulação Wokwi, que permite a simulação de microcontroladores e outros componentes eletrônicos.
-```
+
 Disciplina
 Este projeto foi desenvolvido para a disciplina de Instrumentação Eletrônica da Universidade Estadual do Maranhão (UEMA).

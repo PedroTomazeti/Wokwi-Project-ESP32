@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "author": "Pedro Lucas Tomazeti Fernandes",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -66.9, "left": 177, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "v172.8", "h-220.8", "v-192" ] ],
+    [ "dht1:GND", "esp:GND.1", "black", [ "v182.4", "h-230.4", "v-76.8" ] ],
+    [ "dht1:SDA", "esp:18", "magenta", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

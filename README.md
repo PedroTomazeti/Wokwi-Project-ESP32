@@ -5,11 +5,11 @@ Este projeto foi desenvolvido como parte da disciplina de Instrumentação Eletr
 Descrição do Projeto
 O objetivo deste projeto é medir a temperatura e umidade utilizando um sensor DHT22, e publicar essas medições em um broker MQTT. A comunicação é realizada através de uma conexão Wi-Fi simulada na plataforma Wokwi.
 
-Integrantes da Equipe
+Integrantes da Equipe <br>
 João Marcos Vidal Lacerda <br>
-Luiz Felipe Freitas Ferreira
-Lucas de Menezes Pereira
-Pedro Lucas Tomazeti Fernandes
+Luiz Felipe Freitas Ferreira <br>
+Lucas de Menezes Pereira <br>
+Pedro Lucas Tomazeti Fernandes <br>
 Rebeca Cristina Sousa Vieira de Carvalho
 
 Componentes Utilizados
